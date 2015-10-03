@@ -30,29 +30,32 @@
 import UserItem from './UserItem'
 
 export default {
-  props: ['id'],
+  props: [ 'id' ],
   name: 'UserCarousel',
   computed: {
-    currentIdx: function() {
-      return parseInt(this.$props.id) + 1
+    idx() {
+      return parseInt(this.$props.id)
     },
-    nextIdx: function() {
+    currentIdx() {
+      return this.idx + 1
+    },
+    nextIdx() {
       const data = this.$store.state.cached.data
       if (data.length) {
-        return (parseInt(this.$props.id) + 1) % data.length
+        return (this.idx + 1) % data.length
       }
       return 0
     },
-    prevIdx: function() {
+    prevIdx() {
       const data = this.$store.state.cached.data
-      let previous = parseInt(this.$props.id) - 1
+      let previous = this.idx - 1
       if (data.length) {
         if (previous < 0) previous = data.length - 1
         return previous
       }
       return 0
     },
-    current: function() {
+    current() {
       const data = this.$store.state.cached.data
       if (data.length && this.$props.id < data.length) {
         return data[this.$props.id]
