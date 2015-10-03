@@ -1,0 +1,12 @@
+{
+  "locale": "en-US",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "logout": "Logout",
+  "language": "Locale",
+  "user": "User",
+  "about": "About",
+  "template": "Template",
+  "failed": "Failed!"
+}
