@@ -8,7 +8,6 @@ export default {
   routes: [
     {
       path: '/',
-      name: 'Hello',
       component: HelloWorld,
       children: [
         {

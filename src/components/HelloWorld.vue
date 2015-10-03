@@ -15,22 +15,13 @@ export default {
       currentUserIdx: 0
     }
   },
-  // computed: {
-  //   someData: function() {
-  //     return this.$store.state.cached.data
-  //   }
-  // },
   async created() {
     //TODO better handle errors here
     try {
       await this.$store.dispatch(symbols.actions.loadData)
-      //this.$router.push({ name: 'CurrentUser', params: { id: 0 } })
     } catch (e) {
       logger.error(e)
     }
   }
-  // components: {
-  //   'user-item': UserItem
-  // }
 }
 </script>

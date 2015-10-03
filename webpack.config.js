@@ -25,7 +25,7 @@ module.exports = function(env = {}) {
     sourceMap: getOption('source-map')
   }
   options.isDebug = !options.isRelease && !options.isTest
-  console.log(options)
+  //console.log(options)
 
   const styleLoader = (type, fallback) => {
     const sourceMap = !options.isRelease || options.sourceMap

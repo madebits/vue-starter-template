@@ -22,7 +22,7 @@
   </ul>
 </nav>
     </div>
-  <user-item :name="name" :photo="photo" :cv="cv" />
+  <UserItem :name="current.title" :photo="current.photo" :cv="current.details" />
 </div>
 </template>
 
@@ -58,19 +58,10 @@ export default {
         return data[this.$props.id]
       }
       return { title: '', photo: '', details: '' }
-    },
-    name: function() {
-      return this.current.title
-    },
-    photo: function() {
-      return this.current.photo
-    },
-    cv: function() {
-      return this.current.details
     }
   },
   components: {
-    'user-item': UserItem
+    UserItem
   }
 }
 </script>
