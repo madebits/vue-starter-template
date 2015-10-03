@@ -15,7 +15,7 @@
       </span>
     </li>
     <li class="page-item">
-      <router-link tag="span" :to="`/current/${nextIdx}`">
+      <router-link tag="span" :to="{ name: 'CurrentUser', params: { id: this.nextIdx } }">
         <a class="page-link" href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
       </router-link>
     </li>
