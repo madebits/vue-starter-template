@@ -26,10 +26,7 @@
 
 <script>
 export default {
-  name: 'ConfirmBox',
-  beforeDestroy() {
-    log.debug('beforeDestroy')
-  }
+  name: 'ConfirmBox'
 }
 </script>
 

@@ -10,10 +10,10 @@
 <script>
 export default {
   computed: {
-    vueStarter: function() {
+    vueStarter() {
       return this.$store.state.someModule.vueStarter
     },
-    template: function() {
+    template() {
       return this.$store.state.template
     }
   }

@@ -10,7 +10,7 @@
 export default {
   props: ['error'],
   computed: {
-    lastError: function() {
+    lastError() {
       return this.error || this.$store.lastError
     }
   }

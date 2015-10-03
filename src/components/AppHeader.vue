@@ -44,7 +44,7 @@ import { mapGetters, mapActions } from 'vuex'
 import symbols from '@/store/default/symbols'
 
 export default {
-  data: function() {
+  data() {
     return {
       locales: ['en-US', 'de-DE']
     }
@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     ...mapActions([symbols.actions.logout]),
-    setLocale: function(locale) {
+    setLocale(locale) {
       this.$store.dispatch(symbols.actions.locale, locale)
     }
   }
