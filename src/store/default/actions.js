@@ -2,7 +2,7 @@ import http from 'axios'
 import Config from '@/common/Config'
 import symbols from '@/store/default/symbols'
 import i18n from '@/common/i18n'
-import logger from '@/common/logger'
+import log from '@/common/logger'
 import loginActions from './loginActions'
 
 export default Object.assign(
@@ -14,7 +14,7 @@ export default Object.assign(
 
     async [symbols.actions.locale]({ commit, state }, locale) {
       try {
-        locale = locale || state.shared.locale || 'en-US'
+        locale = locale || state.shared.locale || i18n.defaultLocale
         let message = i18n.getLocaleMessage(locale)
         if (!message || !message.locale) {
           const result = await http.get(Config.backendUrl('/locale'), {
@@ -29,7 +29,7 @@ export default Object.assign(
         }
         commit(symbols.mutations.locale, locale)
       } catch (e) {
-        logger.error(e)
+        log.error(e)
       }
     }
   },

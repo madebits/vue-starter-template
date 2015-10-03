@@ -1,7 +1,7 @@
 import store from '@/store'
 import symbols from '@/store/default/symbols'
 import Timer from '@/common/Timer'
-import logger from '@/common/logger'
+import log from '@/common/logger'
 
 export default () => {
   store.dispatch(symbols.actions.locale)
@@ -11,5 +11,5 @@ export default () => {
     })
   }, 1000 * 60 * 30) // 30 minutes
 
-  logger.info('app started')
+  log.info('app started')
 }

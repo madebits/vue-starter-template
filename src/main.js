@@ -4,15 +4,15 @@ import App from '@/App'
 import router from '@/router'
 import store from '@/store'
 import i18n from '@/common/i18n'
-import logger from '@/common/logger'
+import log from '@/common/logger'
 import '@/common/httpInterceptors'
 import appStart from '@/appStart'
 
 Vue.config.productionTip = !DEBUG
 if (!DEBUG) {
   Vue.config.errorHandler = function (err, vm, info) {
-    logger.error(err)
-    if (info) logger.info(info)
+    log.error(err)
+    if (info) log.info(info)
   }
 }
 
@@ -25,5 +25,7 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+log.debug('test', 1, 2)
 
 appStart()

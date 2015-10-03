@@ -5,11 +5,11 @@
 <form @submit.prevent="login">
   <div class="form-group">
     <label for="email">{{ $t('email') }}</label>
-    <input v-model="email" type="email" class="form-control" :placeholder="$t('email')">
+    <input v-model.trim="email" type="email" class="form-control" :placeholder="$t('email')">
   </div>
   <div class="form-group">
     <label for="password">{{ $t('password') }}</label>
-    <input v-model="password" type="password" class="form-control" :placeholder="$t('password')">
+    <input v-model.trim="password" type="password" class="form-control" :placeholder="$t('password')">
   </div>
   <button type="submit" class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i> {{ $t('login') }}</button>
  </form>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import logger from '@/common/logger'
+import log from '@/common/logger'
 import symbols from '@/store/default/symbols'
 
 export default {
@@ -41,7 +41,7 @@ export default {
           from: this.$route.query.from || '/'
         })
       } catch (e) {
-        logger.error(e)
+        log.error(e)
         this.failed = true
       }
     }

@@ -1,5 +1,4 @@
 <template>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <router-link tag="span" to="/">
   <a class="navbar-brand" href="#"><i class="fa fa-jsfiddle" aria-hidden="true"></i> VueStarter <sup><span class="badge badge-pill badge-light">{{ $t('template') }}</span></sup></a>
@@ -10,14 +9,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <!--
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-      -->
       <li class="nav-item">
         <router-link tag="span" to="/about">
           <a class="nav-link" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> {{$t('about')}}</a>

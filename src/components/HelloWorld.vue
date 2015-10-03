@@ -1,12 +1,20 @@
 <template>
   <div class="m-3">
     <router-view/>
+    <ConfirmBox id="modalSample">
+      <span slot="title">Hello Vue</span>
+      How are you?
+    </ConfirmBox>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSample">
+    Launch demo modal
+    </button>
   </div>
 </template>
 
 <script>
 import symbols from '@/store/default/symbols'
-import logger from '@/common/logger'
+import log from '@/common/logger'
+import ConfirmBox from '@/components/shared/ConfirmBox'
 
 export default {
   name: 'HelloWorld',
@@ -20,8 +28,9 @@ export default {
     try {
       await this.$store.dispatch(symbols.actions.loadData)
     } catch (e) {
-      logger.error(e)
+      log.error(e)
     }
-  }
+  },
+  components: { ConfirmBox }
 }
 </script>

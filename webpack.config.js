@@ -103,7 +103,7 @@ module.exports = function(env = {}) {
     name: 'application',
     entry: {
       main: './src/main.js',
-      vendor: './src/vendor.js'
+      vendor: './src/vendor/index.js'
     },
     output: {
       filename: options.isDebug ? '[name].js' : '[name].[chunkhash].js',
@@ -144,7 +144,9 @@ module.exports = function(env = {}) {
           },
           include: options.include
         },
-        //{ test: /iview.src.*?js$/, loader: 'babel-loader' },
+        /* {
+          test: /.*\/element-ui\/lib\/locale\/.*\.js$/, loader: 'babel-loader'
+        }, */
         {
           test: /\.js$/,
           loader: `babel-loader${options.isDebug

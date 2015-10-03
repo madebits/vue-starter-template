@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store'
-import logger from '@/common/logger'
+import log from '@/common/logger'
 import routes from './routes'
 
 Vue.use(Router)
@@ -34,6 +34,6 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-router.onError(err => logger.error(err))
+router.onError(err => log.error(err))
 
 export default router

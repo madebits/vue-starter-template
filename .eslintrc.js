@@ -30,7 +30,7 @@ module.exports = {
     'space-before-function-paren': 0,
     'comma-dangle': 0,
     'spaced-comment': 0,
-    'no-console': 1
+    'no-console': 1,
     //
     //semi: [1, "always"]
   }
