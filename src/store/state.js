@@ -10,5 +10,6 @@ export default {
     data: {}
   },
   // rest of data is in page memory
-  lastError: null
+  lastError: null,
+  template: 'Template'
 }

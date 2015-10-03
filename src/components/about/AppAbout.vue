@@ -1,7 +1,7 @@
 <template>
 
 <div class="jumbotron m-0">
-  <h1 class="display-3">About VueStarter Template</h1>
+  <h1 class="display-3">About {{ vueStarter }} {{ template }}</h1>
   <p class="lead"><img class="img-fluid rounded" src="./logo.png"> Sample Vue Application</p>
   <hr class="my-4">
   <p id="about-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo similique adipisci maiores veniam. Excepturi alias culpa quasi incidunt accusantium odio harum iusto, voluptas provident doloribus modi atque cum eos porro.</p>
@@ -9,6 +9,14 @@
 </template>
 <script>
 export default {
+  computed: {
+    vueStarter: function() {
+      return this.$store.state.someModule.vueStarter
+    },
+    template: function() {
+      return this.$store.state.template
+    }
+  }
 }
 </script>
 

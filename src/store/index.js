@@ -6,15 +6,17 @@ import state from './state'
 import actions from './default/actions'
 import mutations from './default/mutations'
 import getters from './default/getters'
+import someModule from './someModule'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   strict: DEBUG,
-  state: state,
-  getters: getters,
-  actions: actions,
-  mutations: mutations,
+  state,
+  getters,
+  actions,
+  mutations,
+  modules: { someModule },
   plugins: [
     createPersistedState({
       paths: ['session'],
@@ -25,7 +27,7 @@ const store = new Vuex.Store({
       }
     }),
     createPersistedState({
-      paths: ['shared'],
+      paths: ['shared']
     }),
     createPersistedState({
       paths: ['cached'],
@@ -35,13 +37,22 @@ const store = new Vuex.Store({
 })
 
 if (module.hot) {
-  module.hot.accept(['./default/getters', './default/actions', './default/mutations'], () => {
-    store.hotUpdate({
-      getters: require('./default/getters'),
-      actions: require('./default/actions'),
-      mutations: require('./default/mutations')
-    })
-  })
+  module.hot.accept(
+    [
+      './default/getters',
+      './default/actions',
+      './default/mutations',
+      './someModule'
+    ],
+    () => {
+      store.hotUpdate({
+        getters: require('./default/getters').default,
+        actions: require('./default/actions').default,
+        mutations: require('./default/mutations').default,
+        modules: { someModule: require('./someModule').default }
+      })
+    }
+  )
 }
 
 export default store
