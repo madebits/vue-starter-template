@@ -30,7 +30,7 @@
 import UserItem from './UserItem'
 
 export default {
-  props: [ 'id' ],
+  props: ['id'],
   name: 'UserCarousel',
   computed: {
     idx() {
