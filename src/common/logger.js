@@ -20,4 +20,10 @@ class Logger {
   }
 }
 
-export default new Logger()
+const logger = new Logger()
+
+window.onerror = function(messageOrEvent, source, lineno, colno, error) {
+  logger.error(new Error(`Unhandled: ${messageOrEvent || ''} ${error || ''}`, source || '?', lineno || 0))
+}
+
+export default logger

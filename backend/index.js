@@ -41,34 +41,34 @@ app.get('/data', authorized, (req, res) => {
       title: 'Albert Einstein',
       photo:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg/330px-Einstein_1921_by_F_Schmutzer_-_restoration.jpg',
-      details: 'Random guy'
+      details: 'Is there a constant?'
     },
     {
       id: ++idx,
       title: 'Erwin Schrödinger',
       photo:
         'https://upload.wikimedia.org/wikipedia/commons/2/2e/Erwin_Schr%C3%B6dinger_%281933%29.jpg',
-      details: 'Random guy'
+      details: 'Have you seen my cat?'
     },
     {
       id: ++idx,
       title: 'Андре́й Андре́евич Ма́рков',
       photo:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/AAMarkov.jpg/330px-AAMarkov.jpg',
-      details: 'Random guy'
+      details: 'Is God a chain?'
     },
     {
       id: ++idx,
       title: 'Ludwig Boltzmann',
       photo:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Boltzmann2.jpg/338px-Boltzmann2.jpg',
-      details: 'Random guy'
+      details: 'Was my dream low entropy reality?'
     },
     {
       id: ++idx,
       title: 'Darth Vader',
       photo: 'https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg',
-      details: 'Random troublesome guy'
+      details: 'Where is the power?'
     }
   ])
 })
