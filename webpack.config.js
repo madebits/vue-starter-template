@@ -22,9 +22,13 @@ module.exports = function(env = {}) {
     src: src,
     include: [src],
     dest: path.resolve(__dirname, 'dist'),
-    sourceMap: getOption('source-map')
+    sourceMap: getOption('source-map'),
+    cleanPaths: ['dist', 'testresults']
   }
   options.isDebug = !options.isRelease && !options.isTest
+  if (options.isRelease) {
+    options.cleanPaths.push('node_modules/.cache/babel-loader')
+  }
   //console.log(options)
 
   const styleLoader = (type, fallback) => {
@@ -213,7 +217,7 @@ module.exports = function(env = {}) {
           NODE_ENV: options.isRelease ? '"production"' : '"debug"' //vue
         }
       }),
-      new CleanWebpackPlugin(['dist', 'testresults'], {
+      new CleanWebpackPlugin(options.cleanPaths, {
         root: __dirname,
         verbose: options.isDebug,
         dry: false
