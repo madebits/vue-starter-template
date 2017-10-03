@@ -128,7 +128,9 @@ module.exports = function(env = {}) {
           loader: 'eslint-loader',
           enforce: 'pre',
           include: options.include,
-          exclude: options.isRelease ? [path.resolve(__dirname, 'test.bundle.js'), /.+\.spec\.js$/] : [],
+          exclude: options.isRelease
+            ? [path.resolve(__dirname, 'test.bundle.js'), /.+\.spec\.js$/]
+            : [],
           options: {
             emitWarning: options.isDebug,
             emitError: options.isRelease,
@@ -154,9 +156,9 @@ module.exports = function(env = {}) {
         }, */
         {
           test: /\.js$/,
-          loader: `babel-loader${options.isDebug
-            ? '?cacheDirectory=true'
-            : ''}`,
+          loader: `babel-loader${
+            options.isDebug ? '?cacheDirectory=true' : ''
+          }`,
           include: [
             ...options.include,
             path.resolve(__dirname, 'node_modules/bootstrap/js/src')
