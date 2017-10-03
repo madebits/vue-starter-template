@@ -4,5 +4,6 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "exclude": ["dist", "testresults", "node_modules", "static/jasmine"]
 }
