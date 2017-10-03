@@ -15,6 +15,8 @@ if (!DEBUG) {
   }
 }
 
+Vue.prototype.$log = log
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -24,3 +26,5 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+log.error(new Error('aha'))

@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import log from '@/common/logger'
 import symbols from '@/store/default/symbols'
 
 export default {
@@ -44,7 +43,7 @@ export default {
           from: this.$route.query.from || '/'
         })
       } catch (e) {
-        log.error(e)
+        this.$log.error(e)
         this.failed = true
       }
     }

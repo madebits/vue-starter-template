@@ -26,7 +26,6 @@
 
 <script>
 import symbols from '@/store/default/symbols'
-import log from '@/common/logger'
 import BsModal from '@/components/shared/BsModal'
 
 export default {
@@ -42,7 +41,7 @@ export default {
     try {
       await this.$store.dispatch(symbols.actions.loadData)
     } catch (e) {
-      log.error(e)
+      this.$log.error(e)
     }
   },
   methods: {
@@ -51,10 +50,10 @@ export default {
     },
     onShow() {
       this.confirmed = false
-      log.debug('dialog is shown')
+      this.$log.debug('dialog is shown')
     },
     onHide() {
-      log.debug('dialog is hidden', this.confirmed)
+      this.$log.debug('dialog is hidden', this.confirmed)
     }
   },
   components: { BsModal }

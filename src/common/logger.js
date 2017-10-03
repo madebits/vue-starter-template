@@ -3,7 +3,8 @@ class Logger {
   error(error) {
     console.error(error)
     if (DEBUG) {
-      console.trace('Error log stack follows:')
+      //console.trace('Error log stack follows:')
+      console.error('Error log stack follows:')
     }
     return this
   }

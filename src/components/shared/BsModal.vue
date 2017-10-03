@@ -9,7 +9,6 @@
 </template>
 
 <script>
-//import log from '@/common/logger'
 import BootstrapModal from '@/common/BootstrapModal'
 
 export default {
