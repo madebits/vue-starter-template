@@ -7,10 +7,10 @@ module.exports = function(config) {
   config.set({
     frameworks: ['jasmine'],
 
-    files: ['./src/vendor.js', 'test.bundle.js'],
+    files: ['./src/vendor/index.js', 'test.bundle.js'],
 
     preprocessors: {
-      './src/vendor.js': ['webpack', 'sourcemap'],
+      './src/vendor/index.js': ['webpack', 'sourcemap'],
       'test.bundle.js': ['webpack', 'sourcemap']
     },
 

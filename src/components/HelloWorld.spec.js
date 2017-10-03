@@ -1,8 +1,13 @@
+import * as test from 'vue-test-utils'
 import HelloWorld from './HelloWorld'
 
-describe('::HelloWorld test does nothing', () => {
+describe('HelloWorld test does nothing', () => {
+  it('name is HelloWorld', function() {
+    expect(HelloWorld.name).toBe('HelloWorld')
+  })
 
-    it('::name is HelloWorld', function () {
-        expect(HelloWorld.name).toBe('HelloWorld');
-    });
-});
+  it('html contains Launch', function() {
+    const wrapper = test.mount(HelloWorld)
+    expect(wrapper.html()).toContain('Launch')
+  })
+})
