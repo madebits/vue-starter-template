@@ -20,6 +20,7 @@ module.exports = function(config) {
 
     coverageReporter: {
       dir: 'testresults/coverage/',
+      subdir: '.',
       reporters: [{ type: 'text-summary' }, { type: 'html' }]
     },
 

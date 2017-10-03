@@ -9,6 +9,7 @@ import getters from './default/getters'
 import someModule from './someModule'
 import storeLocalSync from './storeLocalSync'
 import storeWatchers from './storeWatchers'
+import symbols from '@/store/default/symbols'
 
 Vue.use(Vuex)
 
@@ -29,7 +30,8 @@ const store = new Vuex.Store({
       }
     }),
     createPersistedState({
-      paths: ['shared']
+      paths: ['shared'],
+      filter: mutation => mutation.type !== symbols.mutations.storeLocalSync
     }),
     createPersistedState({
       paths: ['cached'],
