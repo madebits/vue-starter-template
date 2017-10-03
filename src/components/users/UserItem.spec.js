@@ -1,7 +1,7 @@
 import * as test from 'vue-test-utils'
 import UserItem from './UserItem'
 
-describe('UserItem', () => {
+describe('UserItem.vue', () => {
   it('Name is rendered', function() {
     const wrapper = test.mount(UserItem, {
       propsData: {
