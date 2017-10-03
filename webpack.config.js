@@ -66,7 +66,7 @@ module.exports = function(env = {}) {
         throw new Error(`Unknown style loader: ${type}`)
     }
 
-    if(options.isDebug || options.isTest) {
+    if (options.isDebug || options.isTest) {
       use.unshift({
         loader: fallback || 'style-loader',
         options: {
@@ -75,10 +75,12 @@ module.exports = function(env = {}) {
       })
     }
 
-    return (options.isDebug || options.isTest) ? use : ExtractTextPlugin.extract({
-      fallback: fallback || 'style-loader',
-      use
-    })
+    return options.isDebug || options.isTest
+      ? use
+      : ExtractTextPlugin.extract({
+        fallback: fallback || 'style-loader',
+        use
+      })
   }
 
   const svgLoader = () => {
@@ -137,9 +139,9 @@ module.exports = function(env = {}) {
           options: {
             //extractCSS: true,
             loaders: {
-               css: styleLoader('css', 'vue-style-loader'),
-               less: styleLoader('less', 'vue-style-loader'),
-               scss: styleLoader('scss', 'vue-style-loader')
+              css: styleLoader('css', 'vue-style-loader'),
+              less: styleLoader('less', 'vue-style-loader'),
+              scss: styleLoader('scss', 'vue-style-loader')
             }
           },
           include: options.include
@@ -227,7 +229,8 @@ module.exports = function(env = {}) {
           to: options.dest
         }
       ]),
-      new webpack.ProvidePlugin({ // for bootstrap
+      new webpack.ProvidePlugin({
+        // for bootstrap
         $: 'jquery',
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
