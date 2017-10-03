@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style scoped>
-#app {
+/* #app {
   text-align: center;
-}
+} */
 </style>
