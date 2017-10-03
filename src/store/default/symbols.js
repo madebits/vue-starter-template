@@ -1,4 +1,4 @@
-// trick to use variables in place of string
+// trick to use variables in place of strings to get better intellisense
 // add new vuex symbols as class null properties
 import SymbolsBase from '@/store/SymbolsBase'
 
