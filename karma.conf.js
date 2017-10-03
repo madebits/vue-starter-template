@@ -1,6 +1,8 @@
 var path = require('path')
 var webpackConfig = require('./webpack.config.js')({ 'build-test': true })
-process.env.CHROME_BIN = require('puppeteer').executablePath()
+if (!process.env.CHROME_BIN) {
+  process.env.CHROME_BIN = require('puppeteer').executablePath()
+}
 process.env.NODE_ENV = 'test'
 
 module.exports = function(config) {

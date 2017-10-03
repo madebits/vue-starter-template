@@ -12,5 +12,4 @@ describe('UserItem.vue', () => {
     })
     expect(wrapper.html()).toContain('Vasian')
   })
-
 })

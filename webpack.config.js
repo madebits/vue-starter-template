@@ -61,6 +61,9 @@ module.exports = function(env = {}) {
           loader: 'sass-loader',
           options: { sourceMap }
         })
+        if (options.isDebug) {
+          use.unshift({ loader: 'thread-loader' })
+        }
         break
       default:
         throw new Error(`Unknown style loader: ${type}`)
@@ -154,7 +157,10 @@ module.exports = function(env = {}) {
           loader: `babel-loader${options.isDebug
             ? '?cacheDirectory=true'
             : ''}`,
-          include: options.include
+          include: [
+            ...options.include,
+            path.resolve(__dirname, 'node_modules/bootstrap/js/src')
+          ]
         },
         {
           test: /\.(svg)(\?.*)?$/,

@@ -1,10 +1,23 @@
 <template>
   <div class="m-3">
     <router-view/>
-    <ConfirmBox id="modalSample">
-      <span slot="title">Hello Vue</span>
-      How are you?
-    </ConfirmBox>
+    <BsModal id="modalSample" @shown="this.onShow" @hidden="this.onHide">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            Vue Test
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          How are you today?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" @click="this.onOk">Ok</button>
+        </div>
+    </BsModal>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSample">
     Launch demo modal
     </button>
@@ -14,13 +27,14 @@
 <script>
 import symbols from '@/store/default/symbols'
 import log from '@/common/logger'
-import ConfirmBox from '@/components/shared/ConfirmBox'
+import BsModal from '@/components/shared/BsModal'
 
 export default {
   name: 'HelloWorld',
   data() {
     return {
-      currentUserIdx: 0
+      currentUserIdx: 0,
+      confirmed: false
     }
   },
   async created() {
@@ -31,6 +45,18 @@ export default {
       log.error(e)
     }
   },
-  components: { ConfirmBox }
+  methods: {
+    onOk() {
+      this.confirmed = true
+    },
+    onShow() {
+      this.confirmed = false
+      log.debug('dialog is shown')
+    },
+    onHide() {
+      log.debug('dialog is hidden', this.confirmed)
+    }
+  },
+  components: { BsModal }
 }
 </script>
