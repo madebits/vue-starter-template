@@ -37,6 +37,6 @@ export default {
     if (router.currentRoute.name === 'Login') {
       return
     }
-    router.push(`/login?relogin=1&from=${router.currentRoute.fullPath}`)
+    router.push(`/login?relogin=1&from=${router.currentRoute.path}`)
   }
 }

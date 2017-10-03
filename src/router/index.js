@@ -16,7 +16,7 @@ router.beforeEach((to, from, next) => {
   }
   const needsAuthorization = !to.matched.every(record => record.meta.noAuth)
   if (needsAuthorization && !store.getters.isAuthorized) {
-    next({ path: `/login?from=${to.query.from || '/'}` })
+    next({ path: `/login?from=${to.path || '/'}` })
     return
   }
   next()

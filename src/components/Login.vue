@@ -35,7 +35,7 @@ export default {
     }
   },
   methods: {
-    login: async function() {
+    async login() {
       try {
         this.failed = false
         await this.$store.dispatch(symbols.actions.login, {
