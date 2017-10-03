@@ -9,12 +9,26 @@
 <script>
 import AppHeader from '@/components/AppHeader'
 import AppFooter from '@/components/AppFooter'
+import symbols from '@/store/default/symbols'
+import Timer from '@/common/Timer'
+import log from '@/common/logger'
 
 export default {
   name: 'app',
   components: {
     AppHeader,
     AppFooter
+  },
+  created() {
+    this.$store.dispatch(symbols.actions.locale)
+    const self = this
+    Timer.repeat(() => {
+      self.$store.dispatch(symbols.actions.refreshAuthToken).catch(() => {
+        self.$store.dispatch(symbols.actions.logout)
+      })
+    }, 1000 * 60 * 30) // 30 minutes
+
+    log.info('app started')
   }
 }
 </script>

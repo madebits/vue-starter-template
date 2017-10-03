@@ -6,7 +6,6 @@ import store from '@/store'
 import i18n from '@/common/i18n'
 import log from '@/common/logger'
 import '@/common/httpInterceptors'
-import appStart from '@/appStart'
 
 Vue.config.productionTip = !DEBUG
 if (!DEBUG) {
@@ -27,5 +26,3 @@ new Vue({
 })
 
 log.debug('test', 1, 2)
-
-appStart()
