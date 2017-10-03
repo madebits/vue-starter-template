@@ -32,6 +32,7 @@
 
 <script>
 import BsModal from '@/components/shared/BsModal'
+
 export default {
   computed: {
     vueStarter() {
@@ -44,7 +45,8 @@ export default {
   methods: {
     showModal() {
       this.$refs.modalSample.show()
-    }
+    },
+    onOk() {}
   },
   components: { BsModal }
 }

@@ -9,7 +9,7 @@ import '@/common/httpInterceptors'
 
 Vue.config.productionTip = !DEBUG
 if (!DEBUG) {
-  Vue.config.errorHandler = function (err, vm, info) {
+  Vue.config.errorHandler = function(err, vm, info) {
     log.error(err)
     if (info) log.info(info)
   }
@@ -24,5 +24,3 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
-
-log.debug('test', 1, 2)

@@ -34,6 +34,9 @@ export default {
 
   [symbols.actions.relogin]({ commit }) {
     commit(symbols.mutations.login, null)
-    router.push(`/login?from${router.fullPath}`)
+    if (router.currentRoute.name === 'Login') {
+      return
+    }
+    router.push(`/login?relogin=1&from=${router.currentRoute.fullPath}`)
   }
 }

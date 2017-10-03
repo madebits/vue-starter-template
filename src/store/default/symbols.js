@@ -1,11 +1,12 @@
 // trick to use variables in place of string
 // add new vuex symbols as class null properties
-import SymbolMapper from '@/store/SymbolMapper'
+import SymbolsBase from '@/store/SymbolsBase'
 
 /* eslint-disable no-useless-constructor */
 
-class Common {
+class Common extends SymbolsBase {
   constructor() {
+    super()
     this.login = null
     this.loadData = null
     this.locale = null
@@ -18,6 +19,7 @@ class Actions extends Common {
     this.loadData = null
     this.logout = null
     this.refreshAuthToken = null
+    this.relogin = null
   }
 }
 
@@ -27,14 +29,20 @@ class Mutations extends Common {
   }
 }
 
-class Getters {
+class Getters extends SymbolsBase {
   constructor() {
+    super()
     this.isAuthorized = null
   }
 }
 
-export default new SymbolMapper({
-  actions: new Actions(),
-  mutations: new Mutations(),
-  getters: new Getters()
-})
+class Symbols extends SymbolsBase {
+  constructor() {
+    super(false) // has to be false here
+    this.actions = new Actions()
+    this.mutations = new Mutations()
+    this.getters = new Getters()
+  }
+}
+
+export default new Symbols()
