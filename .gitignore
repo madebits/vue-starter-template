@@ -3,3 +3,4 @@ node_modules
 dist/
 testresults/
 npm-debug.log*
+.vscode/
