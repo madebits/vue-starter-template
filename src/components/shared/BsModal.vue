@@ -14,13 +14,19 @@ import BootstrapModal from '@/common/BootstrapModal'
 
 export default {
   name: 'BsModal',
+  props: {
+    options: {
+      type: Object,
+      default: {}
+    }
+  },
   data() {
     return {
       modal: null
     }
   },
   mounted() {
-    this.modal = new BootstrapModal(this.$el)
+    this.modal = new BootstrapModal(this.$el, this.options || {})
     const self = this
     this.modal.on(function(e) {
       self.$emit(e.type, { component: self, event: e })
@@ -44,4 +50,3 @@ export default {
   }
 }
 </script>
-

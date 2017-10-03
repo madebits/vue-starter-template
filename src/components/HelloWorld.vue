@@ -2,24 +2,24 @@
   <div class="m-3">
     <router-view/>
     <BsModal id="modalSample" @shown="this.onShow" @hidden="this.onHide">
-        <div class="modal-header">
-          <h5 class="modal-title">
-            Vue Test
-          </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          How are you today?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" @click="this.onOk">Ok</button>
-        </div>
+      <div class="modal-header">
+        <h5 class="modal-title">
+          Vue Test
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        How are you today?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" @click="this.onOk">Ok</button>
+      </div>
     </BsModal>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSample">
-    Launch demo modal
+      Launch demo modal
     </button>
   </div>
 </template>

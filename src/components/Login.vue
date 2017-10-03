@@ -1,21 +1,24 @@
 <template>
-
-<div id='login' class="jumbotron jumbotron-fluid m-0 p-3" >
-  <h1><span class="text-info"><i class="fa fa-user-circle" aria-hidden="true"></i></span> {{ $t('login') }}</h1>
-<form @submit.prevent="login">
-  <div class="form-group">
-    <label for="email">{{ $t('email') }}</label>
-    <input v-model.trim="email" type="email" class="form-control" :placeholder="$t('email')">
+  <div id='login' class="jumbotron jumbotron-fluid m-0 p-3">
+    <h1>
+      <span class="text-info">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+      </span> {{ $t('login') }}</h1>
+    <form @submit.prevent="login">
+      <div class="form-group">
+        <label for="email">{{ $t('email') }}</label>
+        <input v-model.trim="email" type="email" class="form-control" :placeholder="$t('email')">
+      </div>
+      <div class="form-group">
+        <label for="password">{{ $t('password') }}</label>
+        <input v-model.trim="password" type="password" class="form-control" :placeholder="$t('password')">
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <i class="fa fa-arrow-right" aria-hidden="true"></i> {{ $t('login') }}</button>
+    </form>
+    <p v-show="failed" class="text-danger p-2">
+      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{$t('failed')}}</p>
   </div>
-  <div class="form-group">
-    <label for="password">{{ $t('password') }}</label>
-    <input v-model.trim="password" type="password" class="form-control" :placeholder="$t('password')">
-  </div>
-  <button type="submit" class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i> {{ $t('login') }}</button>
- </form>
- <p v-show="failed" class="text-danger p-2"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{$t('failed')}}</p>
-</div>
-
 </template>
 
 <script>

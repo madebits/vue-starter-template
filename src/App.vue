@@ -4,7 +4,7 @@
     <router-view/>
     <AppFooter/>
   </div>
- </template>
+</template>
 
 <script>
 import AppHeader from '@/components/AppHeader'

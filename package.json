@@ -11,7 +11,7 @@
     "build-release": "webpack --env.build-release=1 --hide-modules",
     "build-release-withsourcemaps": "webpack --env.build-release=1 --env.build-source-map=1 --hide-modules",
     "start-debug": "webpack-dev-server --env.build-release=0 --inline --hot",
-    "start-debug-withunittests": "webpack-dev-server --env.build-release=0 --env.build-unittests=1",
+    "start-debug-withtests": "webpack-dev-server --env.build-release=0 --env.build-unittests=1",
     "start-release": "http-server ./dist",
     "test": "karma start ./karma.conf.js --single-run",
     "lint": "eslint --ext .js,.vue --format=node_modules/eslint-formatter-pretty src",
