@@ -7,20 +7,17 @@ module.exports = {
     sourceType: 'module'
   },
   env: {
-    browser: true,
+    browser: true
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: 'standard',
   // required to lint *.vue files
-  plugins: [
-    'html'
-  ],
-  'globals': {
-    'DEBUG': false,
-    'globalAppConfig': false
+  plugins: ['html'],
+  globals: {
+    DEBUG: false,
+    globalAppConfig: false
   },
-  // add your custom rules here
-  'rules': {
+  rules: {
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await
@@ -31,7 +28,11 @@ module.exports = {
     'comma-dangle': 0,
     'spaced-comment': 0,
     'no-console': 1,
-    //
-    //semi: [1, "always"]
+    // manage complexity
+    'max-params': ['error', 6],
+    'max-depth': ['error', 4],
+    'max-nested-callbacks': ['error', 3],
+    'max-statements': ['error', 24],
+    complexity: ['error', 20]
   }
 }
