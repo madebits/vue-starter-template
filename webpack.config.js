@@ -128,7 +128,7 @@ module.exports = function(env = {}) {
           loader: 'eslint-loader',
           enforce: 'pre',
           include: options.include,
-          exclude: [path.resolve(__dirname, 'test.bundle.js'), /.+\.spec\.js$/],
+          exclude: options.isRelease ? [path.resolve(__dirname, 'test.bundle.js'), /.+\.spec\.js$/] : [],
           options: {
             emitWarning: options.isDebug,
             emitError: options.isRelease,
