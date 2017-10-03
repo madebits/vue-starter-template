@@ -26,5 +26,3 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
-
-log.error(new Error('aha'))
