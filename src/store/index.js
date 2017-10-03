@@ -7,6 +7,8 @@ import actions from './default/actions'
 import mutations from './default/mutations'
 import getters from './default/getters'
 import someModule from './someModule'
+import storeLocalSync from './storeLocalSync'
+import storeWatchers from './storeWatchers'
 
 Vue.use(Vuex)
 
@@ -32,7 +34,9 @@ const store = new Vuex.Store({
     createPersistedState({
       paths: ['cached'],
       storage: window.sessionStorage
-    })
+    }),
+    storeLocalSync, // sync shared state between tabs
+    storeWatchers // deal with reactivity
   ]
 })
 

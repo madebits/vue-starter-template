@@ -1,4 +1,4 @@
-// trick to use variables in place of strings to get better intellisense
+// trick to use variables in place of strings
 // add new vuex symbols as class null properties
 import SymbolsBase from '@/store/SymbolsBase'
 
@@ -26,6 +26,7 @@ class Actions extends Common {
 class Mutations extends Common {
   constructor() {
     super()
+    this.storeLocalSync = null
   }
 }
 
@@ -33,6 +34,7 @@ class Getters extends SymbolsBase {
   constructor() {
     super()
     this.isAuthorized = null
+    this.locale = null
   }
 }
 
